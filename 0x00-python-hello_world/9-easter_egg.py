@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 import this
-print(this.s[1:1])
+zen_of_python = this.s[1:1]
+print(zen_of_python)
