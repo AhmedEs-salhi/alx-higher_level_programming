@@ -2,7 +2,7 @@
 import sys
 length = len(sys.argv) - 1
 if length == 1:
-    print("{} argument".format(length))
+    print("{} argument.".format(length))
 elif length == 0:
     print("{} arguments.".format(length))
 else:
