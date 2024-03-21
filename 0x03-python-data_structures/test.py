@@ -1,5 +1,4 @@
-list=[9, 8, 9, 3]
+list=[9, 2, 4, 8, 9, 3]
 
-list[2] = 4
-for i in range(0, len(list)):
+for i in range(len(list) - 1, -1, -1):
     print(list[i])
