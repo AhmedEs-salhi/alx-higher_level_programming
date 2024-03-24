@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-new_in_list = __import__('4-new_in_list').new_in_list
+def no_c(string):
+    new_string = ""
+    for i in range(len(string)):
+        if string[i] == 'c' or string[i] == 'C':
+            continue
+        else:
+            new_string += string[i]
+    return new_string
 
-my_list = [1, 2, 3, 4, 5]
-idx = 3
-new_element = 9
-new_list = new_in_list(my_list, idx, new_element)
-
-print(new_list)
-print(my_list)
+print(no_c("Best School"))
+print(no_c("Chicago"))
+print(no_c("C is fun!"))
