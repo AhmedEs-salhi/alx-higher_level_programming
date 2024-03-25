@@ -1,13 +1,22 @@
 #!/usr/bin/python3
-def no_c(string):
-    new_string = ""
-    for i in range(len(string)):
-        if string[i] == 'c' or string[i] == 'C':
-            continue
-        else:
-            new_string += string[i]
-    return new_string
+t = (1, 2)
+u = (3, 4)
 
-print(no_c("Best School"))
-print(no_c("Chicago"))
-print(no_c("C is fun!"))
+if len(t) > 0:
+    a = t[0]
+else:
+    a = 0
+if len(t) > 1:
+    b = t[1]
+else:
+    b = 0
+if len(u) > 0:
+    c = u[0]
+else:
+    c = 0
+if len(u) > 1:
+    d = u[1]
+else:
+    d = 0
+
+print(a + c, b + d)
