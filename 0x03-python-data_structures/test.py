@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-def ret(sent):
-    return t[0], t[1]
+mylist = [1, 2, 3, 4]
 
-
-a, b = ret((1, 2))
-print(a, b)
+mylist.remove(3)
+print(mylist)
