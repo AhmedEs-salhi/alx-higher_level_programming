@@ -12,7 +12,7 @@ int check_cycle(listint_t *list)
 	listint_t *slowPtr;
 	
 	if (!list || !list->next)
-		return 0;
+		return (0);
 
 	slowPtr = list;
 	fastPtr = list->next;
