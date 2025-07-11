@@ -44,7 +44,7 @@ int is_even(int number)
  */
 int is_palindrome(listint_t **head)
 {
-	int *first_half_array;
+	int first_half_array[500];
 	listint_t *node_current_pointer;
 	int list_length_variable;
 	size_t first_half_array_size;
@@ -57,7 +57,7 @@ int is_palindrome(listint_t **head)
 
 	list_length_variable = list_length(head);
 	first_half_array_size = list_length_variable / 2;
-	first_half_array = malloc(sizeof(int) * first_half_array_size);
+
 
 	array_index = first_half_array_size - 1;
 	helper_variable = 1;
@@ -78,6 +78,5 @@ int is_palindrome(listint_t **head)
 			return (0);
 		node_current_pointer = node_current_pointer->next;
 	}
-	free(first_half_array);
 	return (1);
 }
