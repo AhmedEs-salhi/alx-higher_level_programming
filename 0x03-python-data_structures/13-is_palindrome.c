@@ -78,5 +78,6 @@ int is_palindrome(listint_t **head)
 			return (0);
 		node_current_pointer = node_current_pointer->next;
 	}
+	free(first_half_array);
 	return (1);
 }
