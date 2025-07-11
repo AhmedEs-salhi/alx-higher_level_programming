@@ -44,7 +44,7 @@ int is_even(int number)
  */
 int is_palindrome(listint_t **head)
 {
-	int first_half_array[500];
+	int first_half_array[5000];
 	listint_t *node_current_pointer;
 	int list_length_variable;
 	size_t first_half_array_size;
