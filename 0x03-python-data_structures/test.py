@@ -1,5 +1,15 @@
 #!/usr/bin/python3
-mylist = [1, 2, 3, 4]
+import random
+film_list = [
+    "Luck",
+    "Source Code",
+    "The great hack",
+    "The pianist",
+    "A hero",
+    "Casper",
+    "The tuxedo",
+    "The Theory of Everything"
+]
 
-mylist.remove(3)
-print(mylist)
+chosen_film = film_list[random.randrange(0, len(film_list))]
+print(chosen_film)
