@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if not roman_string:
+    if type(roman_string) is not str:
         return 0
     roman_numbers = dict(I=1, V=5, X=10, L=50, C=100, D=500, M=1000)
     if len(roman_string) == 1:
         return roman_numbers[roman_string]
     integer_number = 0
-    for idx in range(len(roman_string)):
+    idx = 0
+    while roman_string:
+        print("index: {}".format(idx))
         if idx + 1 == len(roman_string):
             integer_number += roman_numbers[roman_string[idx]]
             break
