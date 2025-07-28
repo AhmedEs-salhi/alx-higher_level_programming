@@ -8,7 +8,6 @@ def roman_to_int(roman_string):
     integer_number = 0
     idx = 0
     while roman_string:
-        print("index: {}".format(idx))
         if idx + 1 == len(roman_string):
             integer_number += roman_numbers[roman_string[idx]]
             break
