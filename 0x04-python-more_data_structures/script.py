@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-my_list = [(1, 2), (2, 1), (3, 10), (4, 2)]
-temp_list = []
-addition = 0
-mult = 0
-for i in my_list:
-    temp_list = list(i)
-    mult += temp_list[0] * temp_list[1]
-    addition += temp_list[1]
+def complex_delet(a_dictionary, value):  
+    a_dictionary = dict(filter(lambda item: item[1] != 'C', a_dictionary.items()))
+    return a_dictionary
 
-print()
+a_dictionary = {'lang': "C", 'track': "Low", 'pref': "C", 'ids': [1, 2, 3]}
+print("Before {}".format(a_dictionary))
+new_dict = complex_delet(a_dictionary, 'C')
+print(new_dict)
+print("After {}".format(a_dictionary))
