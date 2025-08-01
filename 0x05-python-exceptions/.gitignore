@@ -1,0 +1,6 @@
+#Python's Bytecode
+__pycache__/
+*.py[cod]
+
+#The executable main file
+main.py
