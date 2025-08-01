@@ -4,3 +4,6 @@ __pycache__/
 
 #The executable main file
 main.py
+
+#Bash scripts
+*.sh
