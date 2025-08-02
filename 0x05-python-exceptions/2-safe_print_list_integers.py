@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import dis
 def safe_print_list_integers(my_list=[], x=0):
     nb_print = 0
     temp_x = x
@@ -15,3 +16,4 @@ def safe_print_list_integers(my_list=[], x=0):
             nb_print += 1
     print()
     return nb_print
+dis.dis(safe_print_list_integers)
