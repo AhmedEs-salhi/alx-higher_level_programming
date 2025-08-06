@@ -8,4 +8,4 @@ Scripts/
 main.py
 
 #Pycache
-0x0[0-9]-*/__pycache__/
+0x0[0-9]-*/__pycache__
