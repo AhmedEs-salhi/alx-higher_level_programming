@@ -1,11 +1,11 @@
 #Test folder
 Tests/
 
-#Bash scripts
-*.sh
+#Scripts folder
+Scripts/
 
 #Main test file
 main.py
 
 #Pycache
-__pycache__/
+0x0[0-9]-*/__pycache__/
