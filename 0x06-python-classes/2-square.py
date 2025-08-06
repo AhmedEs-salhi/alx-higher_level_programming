@@ -19,7 +19,7 @@ class Square:
                 ValueError: If the size is less than 0
         """
         if type(size) is not int:
-            raise TypeError("Size must be an integer")
+            raise TypeError("size must be an integer")
         if size < 0:
-            raise TypeError("Size must be >= 0")
+            raise TypeError("size must be >= 0")
         self._Square__size = size
