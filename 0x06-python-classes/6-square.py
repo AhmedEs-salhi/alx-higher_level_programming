@@ -60,8 +60,11 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if type(value) is not tuple:
+        if (type(value) is not tuple or
+                len(value) != 2 or
+                all(type(i) is not int or i < 0 for i in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
+            return
         self.__position = value
 
     def my_print(self):
@@ -71,11 +74,6 @@ class Square:
         """
         if self._Square__size == 0:
             print()
-        for line in range(self.__position[1]):
-            print()
-        for line in range(self._Square__size):
-            for colums in range(self.__position[0]):
-                print(" ", end="")
-            for columns in range(self._Square__size):
-                print("#", end="")
-            print('', end='\n')
+        print("\n" * self.__position[1], end="")
+        for _ in range(self._Square__size):
+            print(" " * self.__position[1] + "#" * self._Square__size)
