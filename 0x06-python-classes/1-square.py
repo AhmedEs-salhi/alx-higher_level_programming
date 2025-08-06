@@ -5,7 +5,7 @@
 
 class Square:
     """ This is the documentation of our class
-        
+
         Attributes:
             _Square__size (int): The size of the square object
     """
