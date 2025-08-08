@@ -10,7 +10,7 @@ class MagicClass:
         Attributes:
             _MagicClass_radius: integer/float number containing the radius
     """
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """ The Attribute initilizer
 
         Args:
