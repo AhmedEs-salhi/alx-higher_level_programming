@@ -86,8 +86,7 @@ class Square:
         """
         output = ""
         if self._Square__size == 0:
-            output += "\n"
-            return
+            return str(output)
         output = "\n" * self.__position[1]
         for _ in range(self._Square__size):
             output += " " * self.__position[0] + "#" * self._Square__size
