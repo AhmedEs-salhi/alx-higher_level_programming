@@ -107,4 +107,5 @@ class SinglyLinkedList:
         while current_node:
             output += str(current_node.data) + "\n"
             current_node = current_node.next_node
-        return str(output)
+
+        return output[:-1]
