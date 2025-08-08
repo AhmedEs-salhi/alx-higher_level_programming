@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import dis
 """ This is the place where modules should be documented
 """
 
@@ -16,3 +17,5 @@ class Square:
                 size (int): The size of the square
         """
         self._Square__size = size
+
+dis.dis(Square)

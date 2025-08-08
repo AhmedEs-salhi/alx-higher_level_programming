@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import dis
 """ This is the place where modules should be documented
 """
 
@@ -39,3 +40,4 @@ class Square:
                 int: The area of the current square object created
         """
         return self._Square__size * self._Square__size
+dis.dis(Square)
