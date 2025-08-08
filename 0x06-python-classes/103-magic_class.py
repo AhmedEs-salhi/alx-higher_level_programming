@@ -1,11 +1,7 @@
 #!/usr/bin/python3
-import math
 """ Math module for some mathematical calculation.
-
-    Raises:
-        TypeError: In case the radius given is neither an integer
-        nor a float.
 """
+import math
 
 
 class MagicClass:
