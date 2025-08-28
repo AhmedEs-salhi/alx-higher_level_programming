@@ -7,8 +7,6 @@
 100
 >>> print(add_integer(100.3, -2))
 98
->>> print(add_integer(10.4, 89.2))
-99
 >>> try:
 ... 	print(add_integer(4, "School"))
 ... except Exception as e:
@@ -21,8 +19,13 @@ b must be an integer
 ...
 a must be an integer
 >>> try:
-...	print(add_integer(None, None))
+...	print(add_integer(float('nan')))
 ... except Exception as e:
 ... 	print(e)
 ...
 a must be an integer
+>>> try:
+...     print(add_integer(100, float('inf')))
+... except Exception as e:
+...     print(e)
+b must be an integer
