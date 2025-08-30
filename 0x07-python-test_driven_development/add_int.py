@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-""" Doc """
 
-def add_integer(a, b=98):
-    """ Doc """
-    if a is None or (type(a) is not int and type(a) is not float):
-        raise TypeError("a must be an integer")
-    if type(b) is not int and type(b) is not float:
-        raise TypeError("b must be an integer")
-    result = a + b
-    if result == float('inf') or result == -float('inf'):
-        return 89
-    return int(a) + int(b)
+matrix = [[1, 2, 1], [9, 0, 1]]
+
+def is_same_length(my_list):
+    length = my_list[0]
+    for idx in range(1, len(my_list)):
+        if my_list[idx] != length:
+            return False
+    return True
+    
+print(is_same_length(list(map(lambda x: len(x), matrix))))
