@@ -4,24 +4,6 @@
 """
 
 
-def is_same_length(my_list):
-    """ Function that assure wheter a matrix (list of lists)
-        have rows with the same size.
-
-    Args:
-        my_list (list): The matrix to work on.
-
-    Returns:
-        bool: True if the matrix have rows with the same size.
-        False otherwize.
-    """
-    length = my_list[0]
-    for idx in range(1, len(my_list)):
-        if my_list[idx] != length:
-            return False
-    return True
-
-
 def matrix_divided(matrix, div):
 
     """ Function that divided every single
@@ -41,8 +23,11 @@ def matrix_divided(matrix, div):
         list: a matrix list of lists of floats where
         evey element is divided by div
     """
-    is_same_length = list(len(matrix[0]) * len(matrix) for x in range(len(matrix)))\
-        == list(map(lambda x: len(x) * len(matrix), matrix))
+    length = len(matrix)
+    rows_length = list(len(matrix[0]) * length for x in range(length))
+    equal_rows_length = list(map(lambda x: len(x) * len(matrix), matrix))
+
+    is_same_length = rows_length == equal_rows_length
     if type(matrix) is not list or matrix != matrix or \
             matrix == float('inf') or matrix == -float('inf'):
         raise TypeError("matrix must be a matrix (list of lists) \
