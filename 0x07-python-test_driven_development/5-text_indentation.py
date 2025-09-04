@@ -20,5 +20,3 @@ def text_indentation(text=None):
             print('{}\n'.format(ch), end='\n')
             continue
         print(ch, end='')
-        
-text_indentation("Ahmed.Essalhi")
