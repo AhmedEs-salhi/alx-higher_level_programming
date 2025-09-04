@@ -4,7 +4,7 @@ This is my module
 """
 
 
-def say_my_name(first_name, last_name=""):
+def say_my_name(first_name=None, last_name=""):
     """
     Function that print a salutation text with both arguments
 
@@ -16,8 +16,8 @@ def say_my_name(first_name, last_name=""):
     Returns:
         Nothing
     """
-    if type(first_name) is not str:
+    if type(first_name) is not str or first_name is None:
         raise TypeError("first_name must be a string")
-    if type(last_name) is not str:
+    if type(last_name) is not str or last_name is None:
         raise TypeError("last_name must be a string")
     print("My name is {} {}".format(first_name, last_name))
