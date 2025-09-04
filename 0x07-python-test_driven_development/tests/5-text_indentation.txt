@@ -1,0 +1,28 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Lorem ipsum. dolor sit amet: consectetur adipiscing elit?")
+Lorem ipsum
+<BLANKLINE>
+ dolor sit amet
+<BLANKLINE>
+ consectetur adipiscing elit
+<BLANKLINE>
+>>> try:
+...     text_indentation(12)
+... except TypeError as err:
+...     print(err)
+...
+text must be a string
+>>> try:
+...     text_indentation(None)
+... except TypeError as err:
+...     print(err)
+...
+text must be a string
+>>> try:
+...     text_indentation()
+... except TypeError as err:
+...     print(err)
+...
+text must be a string
+>>> text_indentation("Lorem ipsum, dolor sit amet, consectetur adipiscing elit")
+Lorem ipsum, dolor sit amet, consectetur adipiscing elit
