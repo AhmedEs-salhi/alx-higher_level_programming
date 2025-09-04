@@ -17,6 +17,8 @@ def text_indentation(text=None):
         raise TypeError("text must be a string")
     for ch in text:
         if ch in ['.', ':', '?']:
-            print('\n', end='\n')
+            print('{}\n'.format(ch), end='\n')
             continue
         print(ch, end='')
+        
+text_indentation("Ahmed.Essalhi")
