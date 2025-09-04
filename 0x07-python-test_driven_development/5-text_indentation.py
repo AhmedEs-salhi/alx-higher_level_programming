@@ -15,9 +15,14 @@ def text_indentation(text=None):
     """
     if type(text) is not str or text is None:
         raise TypeError("text must be a string")
+    output = ""
+    line = ""
     for ch in text:
+        line += ch
         if ch in ['.', ':', '?']:
-            print('{}\n'.format(ch.strip()), end='\n')
+            output += "{}\n\n".format(line.strip())
+            line = ""
             continue
-        print(ch, end='')
-
+    output += "{}".format(line.strip())
+    print(output, end="")
+    

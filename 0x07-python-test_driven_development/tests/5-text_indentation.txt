@@ -2,9 +2,9 @@
 >>> text_indentation("Lorem ipsum. dolor sit amet: consectetur adipiscing elit?")
 Lorem ipsum.
 <BLANKLINE>
- dolor sit amet:
+dolor sit amet:
 <BLANKLINE>
- consectetur adipiscing elit?
+consectetur adipiscing elit?
 <BLANKLINE>
 >>> try:
 ...     text_indentation(12)
@@ -26,3 +26,11 @@ text must be a string
 text must be a string
 >>> text_indentation("Lorem ipsum, dolor sit amet, consectetur adipiscing elit")
 Lorem ipsum, dolor sit amet, consectetur adipiscing elit
+>>> text_indentation("Holberton. School? How are you:    John")
+Holberton.
+<BLANKLINE>
+School?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+John
