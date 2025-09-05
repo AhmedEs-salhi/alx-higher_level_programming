@@ -25,4 +25,3 @@ def text_indentation(text=None):
             continue
     output += "{}".format(line.strip())
     print(output, end="")
-    
