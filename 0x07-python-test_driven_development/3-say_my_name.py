@@ -9,8 +9,8 @@ def say_my_name(first_name=None, last_name=""):
     Function that print a salutation text with both arguments
 
     Args:
-        first_name (string): user's first name
-        last_name (string): user's last name
+        first_name (string, optional): user's first name. Defaults to None
+        last_name (string, optional): user's last name. Defaults to ""
     Raises:
         TypeError: When one or both of strings are not an actual string
     Returns:
@@ -21,4 +21,3 @@ def say_my_name(first_name=None, last_name=""):
     if type(last_name) is not str or last_name is None:
         raise TypeError("last_name must be a string")
     print("My name is {} {}".format(first_name, last_name))
-    

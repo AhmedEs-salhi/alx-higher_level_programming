@@ -9,7 +9,7 @@ def add_integer(a, b=98):
         Adding integer function
         Args:
             a(int): The first integer
-            b(int): The second optional integer
+            b(int, optional): The second optional integer. Defaults to 98
         Return:
             The sum of a and b
     """
