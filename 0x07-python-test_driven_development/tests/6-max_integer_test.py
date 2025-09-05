@@ -6,26 +6,18 @@ max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
-    """ This is my class
+    """ This is my unittest class
     """
     def test_normal_max_integer(self):
-        """test for a noraml list of integers
-        """
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
 
     def test_max_integer_float(self):
-        """test for max at the beginning
-        """
         self.assertEqual(max_integer([4.4, 1.2, 2.1, 3.8]), 4.4)
         
     def test_max_char_in_string(self):
-        """test for max character in a list of characters (string)
-        """
         self.assertEqual(max_integer("Ahmedz"), 'z')
         
     def test_max_char_charList(self):
-        """_summary_
-        """
         self.assertEqual(max_integer(["A", "z", "b", "c"]), 'z')
 
     def test_empty_list(self):
