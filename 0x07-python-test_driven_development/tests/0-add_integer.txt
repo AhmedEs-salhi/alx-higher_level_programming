@@ -29,3 +29,8 @@ a must be an integer
 ... except Exception as e:
 ...     print(e)
 b must be an integer
+>>> try:
+...     print(add_integer(100, -float('inf')))
+... except Exception as e:
+...     print(e)
+b must be an integer
