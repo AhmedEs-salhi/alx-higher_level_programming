@@ -31,9 +31,10 @@ def matrix_mul(m_a, m_b):
     Raises:
         TypeError: Raises in case of a matrix is not rectangle,
                    if a matrix does not contain only integers or floats,
-                   if a matrix is empty, if a matrix is not a list of lists,
+                   if a matrix is not a list of lists,
                    if a matrix contains lists doesn't have the same size
         ValueError: Raises if both matrices can't be multiplied
+                    or if a matrix is empty.
 
     Returns:
         list: The result of the multiplication
