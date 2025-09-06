@@ -21,7 +21,7 @@ def is_list_of_lists(m):
     return True, ""
 
 
-def matrix_mul(m_a, m_b):
+def matrix_mul(m_a=None, m_b=None):
     """Multiply two matrices by each other
 
     Args:
