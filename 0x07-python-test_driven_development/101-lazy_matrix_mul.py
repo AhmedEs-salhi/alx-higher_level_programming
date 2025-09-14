@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import numpy as np
 
-def matrix_mul(m_a, m_b):
+def lazy_matrix_mul(m_a, m_b):
     """
     """
     if type(m_a) is not np.ndarray:

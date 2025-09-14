@@ -1,4 +1,4 @@
->>> lazy_mul = __import__("101-lazy").matrix_mul
+>>> lazy_mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
 >>> import numpy as np
 >>> try:
 ... 	lazy_mul([1, 2, 3], np.array([[2, 3, 1]]))
