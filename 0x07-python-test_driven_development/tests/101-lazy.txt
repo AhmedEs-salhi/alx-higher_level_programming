@@ -1,0 +1,45 @@
+>>> lazy_mul = __import__("101-lazy").matrix_mul
+>>> import numpy as np
+>>> try:
+... 	lazy_mul([1, 2, 3], np.array([[2, 3, 1]]))
+... except TypeError as err:
+... 	print(err)
+...
+m_a must be a numpy array
+>>> try:
+... 	lazy_mul(np.array([[1, 2, 3], [2, 3, 1]]), [1, 2, 3])
+... except TypeError as err:
+... 	print(err)
+...
+m_b must be a numpy array
+>>> try:
+... 	lazy_mul(np.array([1, 2, 3]), np.array([1, 2, 3]))
+... except TypeError as err:
+... 	print(err)
+...
+m_a must be a numpy array of numpy arrays
+>>> try:
+... 	lazy_mul(np.array([]), np.array([[1, 2, 3], [1, 2, 3]]))
+... except ValueError as err:
+... 	print(err)
+...
+m_a can't be empty
+>>> try:
+... 	lazy_mul(np.array([[1, 2, 3], [1, 2, 3]]), np.array([[]]))
+... except ValueError as err:
+... 	print(err)
+...
+m_b can't be empty
+>>> my_list = np.array([[1, "Ahmed"], [1, 3.3]])
+>>> try:
+... 	lazy_mul(my_list, np.array([[1, 2], [1, 2]]))
+... except TypeError as err:
+... 	print(err)
+...
+m_a should contain only integers or floats
+>>> try:
+... 	lazy_mul(np.array([[1, 2], [1, 2]]), my_list)
+... except TypeError as err:
+... 	print(err)
+...
+m_b should contain only integers or floats

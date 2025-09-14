@@ -1,0 +1,6 @@
+
+[] (1, 0) => (len(a.shape) == 2 -> 2D array) & (empty)
+[] (0,) -> len(a.shape) == 1 -> 1D array
+[1 2 3] (3,) => len(a.shape) == 1 -> 1D array
+[[1 2]
+ [1 2]] (2, 2) -> len(a.shape) == 2 -> 2D array
