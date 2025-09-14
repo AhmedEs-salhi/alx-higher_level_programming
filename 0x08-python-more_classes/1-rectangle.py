@@ -1,7 +1,10 @@
 #!/usr/bin/python3
+""" This is the documentation of my module
+"""
+
 
 class Rectangle:
-    """ This is my class docstring
+    """This is my class docstring
     """
 
     def __init__(self, width=0, height=0):
