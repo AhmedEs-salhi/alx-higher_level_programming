@@ -49,7 +49,7 @@ class Rectangle:
             for j in range(self.width):
                 string += '#'
             string += '\n'
-        return string
+        return string[:-1]
 
     def __repr__(self):
         return '<{}.{} object at {}>'.format(
