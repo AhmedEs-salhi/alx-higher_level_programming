@@ -1,6 +1,5 @@
-class Me:
-    def __str__(self):
-        return '{}'.format(hex(id(Me)))
+import datetime
 
-me = Me()
-print(str(me))
+now = datetime.datetime.now()
+print(datetime.datetime(2025, 9, 15, 21, 42, 29, 834522))
+print(eval(repr(now)))
