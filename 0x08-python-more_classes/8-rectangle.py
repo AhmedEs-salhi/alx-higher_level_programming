@@ -42,6 +42,11 @@ class Rectangle:
     def area(self):
         return self.width * self.height
 
+    def perimeter(self):
+        if self.width == 0 or self.height == 0:
+            return 0
+        return 2 * (self.width + self.height)
+
     def bigger_or_equal(rect_1, rect_2):
         if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
@@ -51,13 +56,25 @@ class Rectangle:
             return rect_1
         return rect_2
 
+    def __str__(self):
+        string = ''
+        if self.width == 0 or self.height == 0:
+            return string
+        for i in range(self.height):
+            for j in range(self.width):
+                string += str(self.print_symbol)
+            string += '\n'
+        return string[:-1]
+
+    def __repr__(self):
+        return '{}({}, {})'.format(
+                self.__class__.__name__,
+                self.width,
+                self.height)
+
     def __ge__(self, other):
-        self_area = self.area()
-        other_area = other.area()
-        return self_area >= other_area
+        return self.area() >= other.area()
 
-
-if __name__ == '__main__':
-    one = Rectangle(2, 3)
-    two = Rectangle(3, 8)
-    print(one.bigger_or_equal(two))
+    def __del__(self):
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
