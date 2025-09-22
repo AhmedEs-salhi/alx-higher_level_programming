@@ -1,0 +1,5 @@
+- When the matrices are not a compatible shapes (sizes)
+	-> shapes m_a.shape and m_b.shape not aligned: m_a.shape[1] (dim 1) != m_b.shape[0] (dim 0)
+- When we can't multiplied the two matrices
+	-> Scalar operands ar not allowed use '*' instead
+- 
