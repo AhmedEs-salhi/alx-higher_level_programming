@@ -1,6 +1,19 @@
-#!/usr/bin/env python3
-inherits_from = __import__("4-inherits_from").inherits_from
+#!/usr/bin/python3
 
-a = 1
-print(isinstance(a, int), issubclass(int, int))
-print(inherits_from(a, object))
+class Dad:
+    def age_validator(self, age):
+        if not isinstance(age, int):
+            raise TypeError("You should have an integer as an age")
+        return age
+
+class Me(Dad):
+    def __init__(self, age):
+        self.age = self.age_validator(age)
+
+
+try:
+    me = Me(21)
+except Exception as err:
+    print(err)
+else:
+    print(me.age)
