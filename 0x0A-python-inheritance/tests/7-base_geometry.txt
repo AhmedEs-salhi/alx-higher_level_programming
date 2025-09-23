@@ -1,0 +1,21 @@
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("Me", 21)
+>>> try:
+...     bg.integer_validator("Me", "Other me")
+... except Exception as err:
+...     print(err)
+...
+Me must be an integer
+>>> try:
+...     bg.integer_validator("Moi", 0)
+... except Exception as err:
+...     print(err)
+...
+Moi must be greater than 0
+>>> try:
+...     bg.integer_validator("Linus", -21)
+... except Exception as err:
+...     print(err)
+...
+Linus must be greater than 0
