@@ -55,3 +55,14 @@ Me must be an integer
 ...     print(err)
 ...
 Me must be an integer
+>>> try:
+...     bg.integer_validator("Me", False)
+... except Exception as err:
+...     print(err)
+...
+Me must be greater than 0
+>>> try:
+...     bg.integer_validator("Me", True)
+... except Exception as err:
+...     print(err)
+...
