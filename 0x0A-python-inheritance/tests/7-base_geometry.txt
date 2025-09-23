@@ -2,6 +2,12 @@
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("Me", 21)
 >>> try:
+...     bg.area()
+... except Exception as err:
+...     print(err)
+...
+area() is not implemented
+>>> try:
 ...     bg.integer_validator("Me", "Other me")
 ... except Exception as err:
 ...     print(err)
@@ -19,3 +25,33 @@ Moi must be greater than 0
 ...     print(err)
 ...
 Linus must be greater than 0
+>>> try:
+...     bg.integer_validator("Me", None)
+... except Exception as err:
+...     print(err)
+...
+Me must be an integer
+>>> try:
+...     bg.integer_validator()
+... except Exception as err:
+...     print(err)
+...
+integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> try:
+...     bg.integer_validator("Me", (4,))
+... except Exception as err:
+...     print(err)
+...
+Me must be an integer
+>>> try:
+...     bg.integer_validator("Me", {2, 4})
+... except Exception as err:
+...     print(err)
+...
+Me must be an integer
+>>> try:
+...     bg.integer_validator("Me", [2, 3])
+... except Exception as err:
+...     print(err)
+...
+Me must be an integer
