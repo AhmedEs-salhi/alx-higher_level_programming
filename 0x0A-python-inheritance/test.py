@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
+inherits_from = __import__("4-inherits_from").inherits_from
 
-def print_sorted(my_list):
-    list_copy = my_list.copy()
-    list_copy.sort()
-    return list_copy
-
-my_list = [3, 1, 5, 6]
-print(print_sorted(my_list))
-print(my_list)
+a = 1
+print(isinstance(a, int), issubclass(int, int))
+print(inherits_from(a, object))
