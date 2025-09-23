@@ -10,10 +10,9 @@ class Me(Dad):
     def __init__(self, age):
         self.age = self.age_validator(age)
 
+    def __str__(self):
+        return "[Me] {}".format(self.age)
 
-try:
-    me = Me(21)
-except Exception as err:
-    print(err)
-else:
-    print(me.age)
+
+me = Me(21)
+print(me)
