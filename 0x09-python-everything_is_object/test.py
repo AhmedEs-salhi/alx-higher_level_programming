@@ -17,7 +17,8 @@ class OtherMe(list):
 
 me = Me(4)
 other_me = OtherMe(5)
+print(issubclass(list, object))
 
-print(dir(Me))
+#print(dir(Me))
 print("--")
-print(dir(OtherMe))
+#print(dir(OtherMe))
