@@ -12,5 +12,3 @@ def add_item(obj):
         obj.append(sys.argv[i])
     save_to_json_file(obj, "add_item.json")
 
-
-add_item([])
