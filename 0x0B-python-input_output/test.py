@@ -7,4 +7,6 @@ class MyClass:
 
 
 me = MyClass("Ahmed", 21, "Morocco")
-print("name" in me.__dict__)
+print(me.__dict__)
+me.__dict__["name"] = "Linus"
+print(me.__dict__)
