@@ -1,4 +1,10 @@
 #!/usr/bin/python3
-add_item = __import__("7-add_item").add_item
-print(__import__("7-add_item").__doc__)
-print(add_item.__doc__)
+class MyClass:
+    def __init__(self, name, age, country):
+        self.name = name
+        self.age = age
+        self.country = country
+
+
+me = MyClass("Ahmed", 21, "Morocco")
+print("name" in me.__dict__)
