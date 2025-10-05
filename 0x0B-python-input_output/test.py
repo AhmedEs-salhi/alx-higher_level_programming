@@ -25,4 +25,4 @@ def add_item(obj):
         obj += temp_obj
         save_to_json_file(obj, "add_item.json")
 
-add_item(["First"])
+add_item([])
