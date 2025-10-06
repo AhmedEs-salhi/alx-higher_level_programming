@@ -1,14 +1,15 @@
-#!/usr/bin/python3
-""" My class module
-"""
+with open("output.txt", "br+") as file:
+    seek_value = 0
+    for i in range(5):
+        line = file.readline()
+        file.seek(len(file.readline()), 1)
+        print(line, file.tell())
+        file.write(b"\nThis is me\n")
 
-class MyClass:
-    """ My class
-    """
+        #print(file.tell())
 
-    def __init__(self, name):
-        self.name = name
-        self.number = 0
-
-    def __str__(self):
-        return "[MyClass] {} - {:d}".format(self.name, self.number)
+        #if "Python" in line:
+            #file.write("This is me")
+            # Try to ask AI why this code is not writing
+            # multiple times inside the file
+            # and just writing a single time at the end of the file
