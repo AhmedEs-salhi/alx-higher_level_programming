@@ -87,3 +87,18 @@ class Rectangle(Base):
             self.__class__.__name__,
             self.id, self.x, self.y, self.width, self.height
         )
+
+    def update(self, *args):
+        attributes_dict = self.__dict__
+        attributes_dict["id"] = args[0]
+        index = 1
+        for key in attributes_dict:
+            if key == "id":
+                continue
+            try:
+                attributes_dict[key] = args[index]
+            except IndexError:
+                break
+            else:
+                index += 1
+
