@@ -88,17 +88,29 @@ class Rectangle(Base):
             self.id, self.x, self.y, self.width, self.height
         )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ This is update method documentation """
+        #print("kwargs len: {}".format(len(kwargs)))
+        #print("args len: {}".format(len(args)))
+
         attributes_dict = self.__dict__
-        attributes_dict["id"] = args[0]
-        index = 1
-        for key in attributes_dict:
-            if key == "id":
-                continue
-            try:
-                attributes_dict[key] = args[index]
-            except IndexError:
-                break
-            else:
-                index += 1
+        if len(args) == 0:
+            for key in kwargs:
+                for attr_dict_key in attributes_dict:
+                    if key == attr_dict_key[12:] or key == attr_dict_key:
+                        attributes_dict[attr_dict_key] = kwargs[key]
+                    else:
+                        continue
+        else:
+            attributes_dict["id"] = args[0]
+            index = 1
+            for key in attributes_dict:
+                if key == "id":
+                    continue
+                try:
+                    attributes_dict[key] = args[index]
+                except IndexError:
+                    break
+                else:
+                    index += 1
+        #print(attributes_dict)
