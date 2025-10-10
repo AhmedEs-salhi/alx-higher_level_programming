@@ -90,8 +90,6 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ This is update method documentation """
-        #print("kwargs len: {}".format(len(kwargs)))
-        #print("args len: {}".format(len(args)))
 
         attributes_dict = self.__dict__
         if len(args) == 0:
@@ -113,4 +111,3 @@ class Rectangle(Base):
                     break
                 else:
                     index += 1
-        #print(attributes_dict)
