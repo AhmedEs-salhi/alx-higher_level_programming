@@ -89,6 +89,7 @@ class Rectangle(Base):
         )
 
     def update(self, *args):
+        """ This is update method documentation """
         attributes_dict = self.__dict__
         attributes_dict["id"] = args[0]
         index = 1
