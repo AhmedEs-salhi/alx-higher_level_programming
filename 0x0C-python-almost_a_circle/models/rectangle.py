@@ -102,4 +102,3 @@ class Rectangle(Base):
                 break
             else:
                 index += 1
-
