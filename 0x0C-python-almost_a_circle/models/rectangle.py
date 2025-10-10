@@ -76,10 +76,10 @@ class Rectangle(Base):
 
     def display(self):
         """ This is display method documentation """
+        output = "\n" * self.y
         for i in range(self.height):
-            for j in range(self.width):
-                print("#", end="")
-            print()
+            output += " " * self.x + "#" * self.width + "\n"
+        print(output[:-1])
 
     def __str__(self):
         """ This is __str__ method documentation """
