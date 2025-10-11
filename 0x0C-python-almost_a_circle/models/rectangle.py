@@ -82,7 +82,7 @@ class Rectangle(Base):
         print(output[:-1])
 
     def update(self, *args, **kwargs):
-        """ This is update method documentation"""
+        """ This is update method documentation """
         if args:
             attr_names = ['id', 'width', 'height', 'x', 'y']
             for i, value in enumerate(args):
