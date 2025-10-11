@@ -109,7 +109,6 @@ class Rectangle(Base):
                 a_dictionary[key] = getattr(self, key)
         return a_dictionary
 
-
     def __str__(self):
         """ This is __str__ method documentation """
         return "[{}] ({}) {}/{} - {}/{}".format(
