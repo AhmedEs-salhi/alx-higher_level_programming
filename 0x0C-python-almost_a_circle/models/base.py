@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ This is the module documentation"""
+import json
 
 
 class Base:
@@ -13,3 +14,10 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """ This is to_json_string method documentation """
+        if list_dictionaries:
+            return json.dumps(list_dictionaries)
+        return "[]"

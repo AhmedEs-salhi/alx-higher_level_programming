@@ -1,24 +1,16 @@
 #!/usr/bin/python3
+import json
+list_dict_json = []
+a_dictionary = {"name": "Ahmed", "age": 21, "CNE": 2229307}
+list_dict_json.append(a_dictionary)
+list_dict_json = json.dumps(list_dict_json)
+print(list_dict_json, type(list_dict_json))
 
-from models.rectangle import Rectangle
-class Square(Rectangle):
-    def __init__(self, id, size, x, y):
-        super().__init__(id, size, size, x, y)
 
-    def update(self, *args):
-        args_len = len(args)
-        attr_dict = self.__dict__
-        if args_len < 2:
-            attr_dict["id"] = args[0]
-        else:
-            attr_dict["_Rectangle__width"], attr_dict["_Rectangle__height"] = args[1]
-            index = 2
-            
-    
-    def __str__(self):
-        return "{}".format(self.__dict__)
+def func(number):
+    if number:
+        return number
+    return "It's None you idiot"
 
-s = Square(1, 2, 3, 4)
-print(s)
-s.update(1024)
-print(s)
+print(func(1024))
+print(func(None))
