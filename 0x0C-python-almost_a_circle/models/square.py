@@ -17,6 +17,22 @@ class Square(Rectangle):
     def size(self, size):
         self.width = size
 
+    def update(self, *args, **kwargs):
+        if args:
+            attr_names = ['id', 'size', 'x', 'y']
+            for i, value in enumerate(args):
+                if i < len(attr_names):
+                    setattr(self, attr_names[i], value)
+
+        elif kwargs:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+                else:
+                    mangledKey = "_{}__{}".format(self.__class__.__name__, key)
+                    if hasattr(self, mangledKey):
+                        setattr(self, mangledKey, value)
+
     def __str__(self):
         """ This is __str__ method documentation """
         return "[{}] ({}) {}/{} - {}".format(

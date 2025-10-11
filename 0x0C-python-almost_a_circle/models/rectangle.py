@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """ This is module documentation """
-
 from .base import Base
 
 
 class Rectangle(Base):
     """ This is the class documentation """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """ This is __init__ function documentation"""
         self.width = width
@@ -81,33 +81,27 @@ class Rectangle(Base):
             output += " " * self.x + "#" * self.width + "\n"
         print(output[:-1])
 
+    def update(self, *args, **kwargs):
+        """ This is update method documentation"""
+
+        if args:
+            attr_names = ['id', 'width', 'height', 'x', 'y']
+            for i, value in enumerate(args):
+                if i < len(attr_names):
+                    setattr(self, attr_names[i], value)
+
+        elif kwargs:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+                else:
+                    mangled_key = f"_{self.__class__.__name__}__{key}"
+                    if hasattr(self, mangled_key):
+                        setattr(self, mangled_key, value)
+
     def __str__(self):
         """ This is __str__ method documentation """
         return "[{}] ({}) {}/{} - {}/{}".format(
             self.__class__.__name__,
             self.id, self.x, self.y, self.width, self.height
         )
-
-    def update(self, *args, **kwargs):
-        """ This is update method documentation """
-
-        attributes_dict = self.__dict__
-        if len(args) == 0:
-            for key in kwargs:
-                for attr_dict_key in attributes_dict:
-                    if key == attr_dict_key[12:] or key == attr_dict_key:
-                        attributes_dict[attr_dict_key] = kwargs[key]
-                    else:
-                        continue
-        else:
-            attributes_dict["id"] = args[0]
-            index = 1
-            for key in attributes_dict:
-                if key == "id":
-                    continue
-                try:
-                    attributes_dict[key] = args[index]
-                except IndexError:
-                    break
-                else:
-                    index += 1
