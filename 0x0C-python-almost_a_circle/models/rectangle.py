@@ -97,6 +97,19 @@ class Rectangle(Base):
                     if hasattr(self, mangled_key):
                         setattr(self, mangled_key, value)
 
+    def to_dictionary(self):
+        """ This is to_dictionary method documentation """
+        attr_names = ['x', 'y', 'id', 'height', 'width']
+        a_dictionary = {}
+        for index, key in enumerate(attr_names):
+            mangled_key = "_{}__{}".format(self.__class__.__name__, key)
+            if hasattr(self, mangled_key):
+                a_dictionary[key] = getattr(self, mangled_key)
+            else:
+                a_dictionary[key] = getattr(self, key)
+        return a_dictionary
+
+
     def __str__(self):
         """ This is __str__ method documentation """
         return "[{}] ({}) {}/{} - {}/{}".format(
