@@ -83,13 +83,11 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ This is update method documentation"""
-
         if args:
             attr_names = ['id', 'width', 'height', 'x', 'y']
             for i, value in enumerate(args):
                 if i < len(attr_names):
                     setattr(self, attr_names[i], value)
-
         elif kwargs:
             for key, value in kwargs.items():
                 if hasattr(self, key):
