@@ -25,7 +25,9 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         file_name = '{}.json'.format(cls.__name__)
-        list_dictionary = [obj.to_json_string(obj.to_dictionary()) for obj in list_objs]
+        list_dictionary = [obj.to_dictionary() for obj in list_objs]
+        cls.to_json_string(list_dictionary)
+        #list_dictionary = sorted(list_dictionary)
 
         with open(file_name, "w", encoding="utf-8") as json_file:
             if type(list_objs) is None:
