@@ -61,4 +61,3 @@ class Base:
         else:
             json_list = cls.from_json_string(json_list)
             return [cls.create(**a_dictionary) for a_dictionary in json_list]
-
