@@ -2,7 +2,6 @@
 
 import unittest
 import sys, os
-from stringprep import b1_set
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 Base = __import__('models.base', fromlist=['Base']).Base
