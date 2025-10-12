@@ -41,6 +41,24 @@ class Base:
 
     @classmethod
     def create(cls, **a_dictionary):
-        dummy = cls(1, 0, 0)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1, 0)
+        else:
+            dummy = cls(1, 0, 0)
         dummy.update(**a_dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        file_name = "{}.json".format(cls.__name__)
+        json_list = []
+
+        try:
+            with open(file_name, "r", encoding="utf-8") as json_file:
+                json_list = json_file.read()
+        except FileNotFoundError:
+            return []
+        else:
+            json_list = cls.from_json_string(json_list)
+            return [cls.create(**a_dictionary) for a_dictionary in json_list]
+

@@ -1,4 +1,12 @@
 #!/usr/bin/python3
 
-a_dictionary = {'id': 7, 'width': 1, 'height': 7}
-print(a_dictionary.get('id'))
+with open("Rectangle.json", "r") as file:
+    print(file.seek(1))
+    character = ''
+    line = ''
+    while character != ']':
+        character = file.read(1)
+        print(character, end="")
+        #line += character
+        if character == '}':
+            file.seek(file.tell() + 2)
