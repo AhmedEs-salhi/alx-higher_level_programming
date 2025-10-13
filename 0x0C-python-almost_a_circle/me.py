@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
-with open("Rectangle.json", "r") as file:
-    print(file.seek(1))
-    character = ''
-    line = ''
-    while character != ']':
-        character = file.read(1)
-        print(character, end="")
-        #line += character
-        if character == '}':
-            file.seek(file.tell() + 2)
+from models.rectangle import Rectangle
+from models.square import Square
+
+r1 = Rectangle(10, 7, 2, 8)
+r2 = Rectangle(2, 4)
+list_rectangles_input = [r1, r2]
+
+Rectangle.save_to_file_csv(list_rectangles_input)
+
+list_rectangles_output = Rectangle.load_from_file_csv()
