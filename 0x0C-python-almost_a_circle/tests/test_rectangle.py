@@ -31,9 +31,13 @@ class TestRectangle(unittest.TestCase):
 
     def testRectangleDisplay(self):
         self.assertIn("display", self.r1.__dir__())
+        self.assertIs(self.r1.display(), None)
+        self.assertIs(self.r2.display(), None)
+        self.assertIs(self.r3.display(), None)
 
-    def testRectangleToDisplay(self):
+    def testRectangleToDictionary(self):
         self.assertIn("to_dictionary", self.r1.__dir__())
+        self.assertEqual(self.r1.to_dictionary(), {'x': 0, 'y': 0, 'id': self.r1.id, 'width': 1, "height": 2})
 
     def testRectangleToUpdate(self):
         self.assertIn("update", self.r1.__dir__())
@@ -58,19 +62,22 @@ class TestRectangle(unittest.TestCase):
         self.r1.update(**{'id': 89, 'width': 1, 'height': 22, 'x': 10, 'y': 4})
         self.assertEqual(self.r1.y, 4)
 
-    def TestRectangleCreate(self):
+    def testRectangleCreate(self):
         self.assertIn("create", self.r1.__dir__())
-        self.assertEqual(self.r1.create(**{'id': 89}).id, 89)
-        self.assertEqual(self.r1.create(**{'id': 89, 'width': 1}).width, 1)
-        self.assertEqual(self.r1.create(**{'id': 89, 'width': 1, 'height': 22}).height, 22)
-        self.assertEqual(self.r1.create(**{'id': 89, 'width': 1, 'height': 22, 'x': 10}).x, 10)
-        self.assertEqual(self.r1.create(**{'id': 89, 'width': 1, 'height': 22, 'x': 10, 'y': 3}).y, 3)
+        self.assertEqual(Rectangle.create(**{'id': 89}).id, 89)
+        self.assertEqual(Rectangle.create(**{'id': 89, 'width': 1}).width, 1)
+        self.assertEqual(Rectangle.create(**{'id': 89, 'width': 1, 'height': 22}).height, 22)
+        self.assertEqual(Rectangle.create(**{'id': 89, 'width': 1, 'height': 22, 'x': 10}).x, 10)
+        self.assertEqual(Rectangle.create(**{'id': 89, 'width': 1, 'height': 22, 'x': 10, 'y': 3}).y, 3)
 
-    def TestRectangleSaveToFile(self):
+    def testRectangleSaveToFile(self):
         self.assertIn("save_to_file", self.r1.__dir__())
-        self.assertIsNone(self.r1.save_to_file())
+        self.assertIsNone(self.r1.save_to_file(None))
+        self.assertIsNone(self.r1.save_to_file([]))
+        self.assertIsNone(self.r1.save_to_file([Rectangle(1, 2)]))
 
-
+    def testRectangleFromFile(self):
+        self.assertIsInstance(self.r1.load_from_file(), list)
 
     def testRectangleExceptionRaised(self):
         with self.assertRaises(TypeError):
