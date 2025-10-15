@@ -72,10 +72,10 @@ class TestRectangle(unittest.TestCase):
 
     def testRectangleSaveToFile(self):
         pass
-        #self.assertIn("save_to_file", self.r1.__dir__())
-        #self.assertIsNone(Rectangle.save_to_file(None))
-        #self.assertIsNone(Rectangle.save_to_file([]))
-        #self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
+        self.assertIn("save_to_file", self.r1.__dir__())
+        self.assertIsNone(Rectangle.save_to_file(None))
+        self.assertIsNone(Rectangle.save_to_file([]))
+        self.assertIsNone(Rectangle.save_to_file([Rectangle(1, 2)]))
 
     def testRectangleFromFile(self):
         self.assertIsInstance(self.r1.load_from_file(), list)
