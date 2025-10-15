@@ -33,9 +33,13 @@ class TestSquare(unittest.TestCase):
 
     def testSquareStr(self):
         self.assertIsInstance(str(self.s1), str)
+        self.assertEqual(str(self.s1), "[Square] ({}) 0/0 - 1".format(self.s1.id))
+        self.assertEqual(str(self.s2), "[Square] ({}) 2/0 - 1".format(self.s2.id))
+        self.assertEqual(str(self.s3), "[Square] ({}) 2/3 - 1".format(self.s3.id))
 
     def testSquareToDictionary(self):
         self.assertIsInstance(self.s1.to_dictionary(), dict)
+        self.assertEqual(self.s1.to_dictionary(),  {'x': 0, 'y': 0, 'id': 68, 'size': 1})
 
     def testSquareUpdate(self):
         self.assertIsNone(self.s1.update(), None)
