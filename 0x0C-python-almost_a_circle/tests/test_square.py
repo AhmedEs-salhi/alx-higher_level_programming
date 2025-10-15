@@ -39,7 +39,7 @@ class TestSquare(unittest.TestCase):
 
     def testSquareToDictionary(self):
         self.assertIsInstance(self.s1.to_dictionary(), dict)
-        self.assertEqual(self.s1.to_dictionary(),  {'x': 0, 'y': 0, 'id': 68, 'size': 1})
+        self.assertEqual(self.s1.to_dictionary(),  {'x': 0, 'y': 0, 'id': 69, 'size': 1})
 
     def testSquareUpdate(self):
         self.assertIsNone(self.s1.update(), None)
